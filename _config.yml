@@ -11,7 +11,7 @@ email: benjaminkagia@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   the personal blog of benjamin kagia
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://kagia.github.io" # the base hostname & protocol for your site
+url: "https://kagia.github.io" # the base hostname & protocol for your site
 twitter_username: benjaminkagia
 github_username:  kagia
 
