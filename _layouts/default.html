@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+<body>
+  <div id="page">
+    {{ content }}
+  </div>
+
+  <div class="footer">
+    <a href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS</a> //
+    <a href="{{ "/about" | prepend: site.baseurl }}">ABOUT</a>
+  </div>
+</body>
+</html>
