@@ -30,6 +30,16 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
 
+h2 {
+  line-height: 2;
+  font-size: 38px;
+  margin-top: 1.5em !important;
+}
+
+article h2 {
+  text-align: left;
+}
+
 a, a:active, a:visited, a:hover {
   color: #FF5959;
   text-decoration: none;
