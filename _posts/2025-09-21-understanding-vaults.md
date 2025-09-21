@@ -42,11 +42,11 @@ On AWS, I use the AWS Parameter Store or AWS Secrets Manager. Locally open sourc
 
 In 2025, there shouldn't be platforms or SDKs that don't support secure secret storage, but this is sadly a reality. If they do, though, it may not be explicitly clear. One thing to look out for is SDKs and services that allow for keys to be provided during runtime. For example, the Auth0 SDK for JavaScript allows you to provide secrets in the constructor.
 
-```ts
+{% highlight javascript %}
 
 import { Auth0Client } from "@auth0/nextjs-auth0/server";
 
-let cachedClient: Auth0Client;
+let cachedClient;
 
 export async function getAuth0Client() {
   if (cachedClient) return cachedClient;
@@ -56,7 +56,7 @@ export async function getAuth0Client() {
 
   return cachedClient;
 }
-```
+{% endhighlight %}
 
 Once you've done this, remove all traces of these secrets from your .env files, .bashrc, or any other unencrypted file. So the next time you `npm install` and malicious code looks for unencrypted secrets, there are none to be found.
 
