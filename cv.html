@@ -1,0 +1,669 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Kagia Benjamin - Cloud Solutions Architect</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            :root {
+                --primary: #1a1a2e;
+                --secondary: #16213e;
+                --accent: #0f4c75;
+                --highlight: #3282b8;
+                --text: #2d2d2d;
+                --text-light: #5a5a5a;
+                --bg: #ffffff;
+                --bg-alt: #f8f9fa;
+                --border: #e1e8ed;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: "DM Sans", sans-serif;
+                color: var(--text);
+                background: var(--bg);
+                line-height: 1.7;
+                -webkit-font-smoothing: antialiased;
+            }
+
+            .container {
+                max-width: 900px;
+                margin: 0 auto;
+                padding: 60px 40px;
+                animation: fadeIn 0.8s ease-out;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            header {
+                border-bottom: 2px solid var(--primary);
+                padding-bottom: 40px;
+                margin-bottom: 50px;
+                position: relative;
+            }
+
+            header::after {
+                content: "";
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                width: 120px;
+                height: 2px;
+                background: var(--highlight);
+                animation: slideIn 0.6s ease-out 0.3s backwards;
+            }
+
+            @keyframes slideIn {
+                from {
+                    width: 0;
+                }
+                to {
+                    width: 120px;
+                }
+            }
+
+            h1 {
+                font-family: "Libre Baskerville", serif;
+                font-size: 3em;
+                font-weight: 700;
+                color: var(--primary);
+                margin-bottom: 10px;
+                letter-spacing: -1px;
+            }
+
+            .subtitle {
+                font-size: 1.3em;
+                color: var(--accent);
+                font-weight: 500;
+                margin-bottom: 25px;
+                letter-spacing: 0.5px;
+            }
+
+            .intro {
+                font-size: 1.05em;
+                line-height: 1.8;
+                color: var(--text-light);
+                max-width: 850px;
+            }
+
+            h2 {
+                font-family: "Libre Baskerville", serif;
+                font-size: 1.8em;
+                color: var(--primary);
+                margin: 50px 0 25px;
+                position: relative;
+                padding-bottom: 12px;
+            }
+
+            h2::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 60px;
+                height: 3px;
+                background: linear-gradient(
+                    90deg,
+                    var(--accent),
+                    var(--highlight)
+                );
+            }
+
+            .skills-grid {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 12px;
+                margin: 30px 0;
+            }
+
+            .skill-tag {
+                background: var(--bg-alt);
+                color: var(--accent);
+                padding: 8px 18px;
+                border-radius: 6px;
+                font-size: 0.9em;
+                font-weight: 500;
+                border: 1px solid var(--border);
+                transition: all 0.3s ease;
+            }
+
+            .skill-tag:hover {
+                background: var(--accent);
+                color: white;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(15, 76, 117, 0.2);
+            }
+
+            .experience-item {
+                margin-bottom: 45px;
+                padding-left: 30px;
+                border-left: 3px solid var(--border);
+                position: relative;
+                transition: border-color 0.3s ease;
+            }
+
+            .experience-item:hover {
+                border-left-color: var(--highlight);
+            }
+
+            .experience-item::before {
+                content: "";
+                position: absolute;
+                left: -7px;
+                top: 6px;
+                width: 11px;
+                height: 11px;
+                background: var(--highlight);
+                border-radius: 50%;
+                border: 2px solid white;
+                box-shadow: 0 0 0 2px var(--border);
+            }
+
+            h3 {
+                font-family: "Libre Baskerville", serif;
+                font-size: 1.4em;
+                color: var(--secondary);
+                margin-bottom: 8px;
+            }
+
+            .role {
+                font-weight: 600;
+                color: var(--accent);
+                font-size: 1.05em;
+                margin-bottom: 5px;
+            }
+
+            .date {
+                color: var(--text-light);
+                font-style: italic;
+                font-size: 0.95em;
+                margin-bottom: 15px;
+                display: block;
+            }
+
+            .project-title {
+                font-weight: 600;
+                color: var(--primary);
+                font-size: 1.1em;
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+
+            ul {
+                list-style: none;
+                margin: 15px 0;
+            }
+
+            li {
+                padding-left: 25px;
+                position: relative;
+                margin-bottom: 10px;
+                color: var(--text);
+            }
+
+            li::before {
+                content: "→";
+                position: absolute;
+                left: 0;
+                color: var(--highlight);
+                font-weight: bold;
+            }
+
+            .keywords {
+                font-size: 0.85em;
+                color: var(--text-light);
+                font-style: italic;
+                margin-top: 12px;
+                padding: 8px 12px;
+                background: var(--bg-alt);
+                border-radius: 4px;
+                border-left: 3px solid var(--highlight);
+            }
+
+            .education-item,
+            .cert-item {
+                margin-bottom: 20px;
+                padding: 20px;
+                background: var(--bg-alt);
+                border-radius: 8px;
+                border-left: 4px solid var(--accent);
+                transition: all 0.3s ease;
+            }
+
+            .education-item:hover,
+            .cert-item:hover {
+                transform: translateX(5px);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            }
+
+            .degree {
+                font-weight: 600;
+                color: var(--primary);
+                font-size: 1.1em;
+            }
+
+            .institution {
+                color: var(--text-light);
+                margin-top: 5px;
+            }
+
+            .languages {
+                display: flex;
+                gap: 30px;
+                margin: 20px 0;
+            }
+
+            .language {
+                flex: 1;
+                padding: 20px;
+                background: var(--bg-alt);
+                border-radius: 8px;
+                text-align: center;
+                border-top: 3px solid var(--accent);
+            }
+
+            .language-name {
+                font-weight: 600;
+                color: var(--primary);
+                margin-bottom: 5px;
+            }
+
+            .language-level {
+                color: var(--text-light);
+                font-size: 0.9em;
+            }
+
+            .essential-skills {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 15px;
+                margin: 25px 0;
+            }
+
+            .essential-skill {
+                padding: 15px 20px;
+                background: linear-gradient(
+                    135deg,
+                    var(--accent),
+                    var(--highlight)
+                );
+                color: white;
+                border-radius: 8px;
+                font-weight: 500;
+                text-align: center;
+                transition: transform 0.3s ease;
+            }
+
+            .essential-skill:hover {
+                transform: scale(1.05);
+            }
+
+            .activities {
+                background: var(--bg-alt);
+                padding: 25px;
+                border-radius: 8px;
+                border-left: 4px solid var(--highlight);
+                margin: 30px 0;
+                font-size: 1.05em;
+                line-height: 1.8;
+            }
+
+            @media (max-width: 768px) {
+                .container {
+                    padding: 40px 20px;
+                }
+
+                h1 {
+                    font-size: 2.2em;
+                }
+
+                .subtitle {
+                    font-size: 1.1em;
+                }
+
+                .essential-skills {
+                    grid-template-columns: 1fr;
+                }
+
+                .languages {
+                    flex-direction: column;
+                    gap: 15px;
+                }
+            }
+
+            @media print {
+                body {
+                    background: white;
+                }
+
+                .container {
+                    max-width: 100%;
+                    padding: 20px;
+                }
+
+                .skill-tag:hover,
+                .experience-item:hover,
+                .education-item:hover,
+                .cert-item:hover,
+                .essential-skill:hover {
+                    transform: none;
+                    box-shadow: none;
+                }
+
+                @page {
+                    margin: 1cm;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>Kagia Benjamin</h1>
+                <div class="subtitle">Certified Cloud Solutions Architect</div>
+                <p class="intro">
+                    Kagia has over eight years of experience as a full-stack
+                    engineer working with some of the biggest brands, including
+                    PVH, ShipStation, and Restaurant Brands International. In
+                    these roles, Kagia has done more than just deliver the code.
+                    Kagia always focuses on the end users and the business as a
+                    whole.
+                </p>
+                <p class="intro" style="margin-top: 15px">
+                    From leading redesign efforts to deploying scalable
+                    backends, Kagia has a wealth of knowledge in React, AWS,
+                    Postgres, and various languages, including Typescript,
+                    Python, and Rust. Kagia drives success by fostering
+                    collaboration and focusing on business outcomes.
+                </p>
+            </header>
+
+            <section>
+                <h2>Top Skills</h2>
+                <div class="skills-grid">
+                    <span class="skill-tag">AWS Cloud</span>
+                    <span class="skill-tag">NodeJs</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Microservices</span>
+                    <span class="skill-tag">TypeScript</span>
+                    <span class="skill-tag">Go</span>
+                    <span class="skill-tag">GraphQL</span>
+                    <span class="skill-tag">Accessibility</span>
+                    <span class="skill-tag">Kubernetes</span>
+                    <span class="skill-tag">Cloud Native Development</span>
+                    <span class="skill-tag">TailwindCSS</span>
+                </div>
+            </section>
+
+            <section>
+                <h2>Work Experience</h2>
+
+                <div class="experience-item">
+                    <h3>Reaktor BV</h3>
+                    <div class="role">Senior Fullstack Engineer</div>
+                    <span class="date">April 2025 - Present</span>
+                    <ul>
+                        <li>
+                            Led technical proposal development and created
+                            initial application prototypes
+                        </li>
+                        <li>
+                            Advised on cloud migration strategies and
+                            implementation approaches
+                        </li>
+                        <li>
+                            Contributed senior-level technical expertise to
+                            shape client solutions
+                        </li>
+                    </ul>
+
+                    <div class="project-title">
+                        Project: Frontera - Lead Frontend Engineer
+                    </div>
+                    <p>
+                        The client had a broad vision for a complex geospatial
+                        application and a very tight deadline. I worked together
+                        with a UI/UX team and the founders to define the final
+                        product.
+                    </p>
+                    <ul>
+                        <li>
+                            Delivered a high-performance SSR frontend based on
+                            NextJS running on AWS
+                        </li>
+                        <li>
+                            Localized the user experience for four different
+                            countries
+                        </li>
+                        <li>Designed the API contracts using Swagger</li>
+                    </ul>
+
+                    <div class="project-title">
+                        Project: Decathlon (October - December 2025)
+                    </div>
+                    <div class="role">Senior Fullstack Engineer</div>
+                    <p>
+                        The client presented with an ambitious brief that
+                        required us to craft a Fullstack AI solution to
+                        revolutionize a critical process in their retail
+                        workflow.
+                    </p>
+                    <ul>
+                        <li>
+                            Delivered an AI architecture that powered previously
+                            manual workflows
+                        </li>
+                        <li>
+                            Added observability (evals, tracing) to gain data
+                            and insight into the performance and efficacy of the
+                            solution
+                        </li>
+                        <li>
+                            Documented and worked directly to introduce
+                            non-technical stakeholders to the world of AI
+                            processes and workflows
+                        </li>
+                        <li>
+                            Facilitated meetings, discussions and planning
+                            sessions to keep the team organized and on track
+                        </li>
+                    </ul>
+                    <div class="keywords">
+                        AI • Mastra • Retail • Engineering • Tanstack Start
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Fashion Cloud GmBH</h3>
+                    <div class="role">Senior Fullstack Software Engineer</div>
+                    <span class="date">September 2022 - February 2025</span>
+                    <ul>
+                        <li>
+                            Led several projects including a complete redesign
+                            of our frontend
+                        </li>
+                        <li>
+                            Helped shape our current scalable AWS and Kubernetes
+                            architecture
+                        </li>
+                        <li>Converted our E2E from cypress to playwright</li>
+                        <li>Converted Figma designs into Storybook stories</li>
+                        <li>
+                            Participated in critical user research and user
+                            interviews
+                        </li>
+                        <li>
+                            Picked up new skills in GoLang and Shape-Up
+                            methodology
+                        </li>
+                        <li>Assisted with product and retail data ETL</li>
+                        <li>Prototyped an internal LLM RAG based on Notion</li>
+                    </ul>
+                    <div class="keywords">
+                        Fashion • Kubernetes • Retail • LLM • Cypress • Go-Lang
+                        • Typescript • React
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Betty Blocks BV</h3>
+                    <div class="role">Senior Fullstack Software Engineer</div>
+                    <span class="date">March 2019 - August 2022</span>
+                    <ul>
+                        <li>
+                            Contributing to decisions and architecture around
+                            our No-Code/Low-Code product
+                        </li>
+                        <li>
+                            Implementing user interfaces to exacting
+                            specifications
+                        </li>
+                        <li>
+                            Delivering new features and optimizing existing ones
+                            in GraphQL
+                        </li>
+                        <li>
+                            Delivered an accessible UI component library based
+                            on Figma designs and prototypes
+                        </li>
+                        <li>
+                            Championing a collaborative culture between teams
+                        </li>
+                    </ul>
+                    <div class="keywords">
+                        Figma • Accessibility • Swagger • NextJs • AWS • React •
+                        Typescript • Node • Elixir • Python • GraphQL • Apollo
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Andela Kenya</h3>
+                    <div class="role">Senior Software Engineer</div>
+                    <span class="date">August 2015 - January 2019</span>
+
+                    <div class="project-title">
+                        Project: Ship Station (September 2018 - January 2019)
+                    </div>
+                    <div class="role">Frontend Engineer</div>
+                    <ul>
+                        <li>
+                            Migrating a legacy Backbone.JS codebase towards
+                            modern standards and technologies React / Redux
+                        </li>
+                        <li>
+                            Leading a small team of frontend junior developers
+                        </li>
+                    </ul>
+                    <div class="keywords">
+                        React • BackboneJs • Frontend Migration
+                    </div>
+
+                    <div class="project-title">
+                        Project: Restaurant Brands International (August 2015 -
+                        August 2018)
+                    </div>
+                    <div class="role">Fullstack Software Developer</div>
+                    <ul>
+                        <li>
+                            Architecture and implementation of a user engagement
+                            service for RBI's Mobile Order and Pay iOS
+                            application
+                        </li>
+                        <li>
+                            Implementing and maintaining of Bastion servers on
+                            AWS
+                        </li>
+                        <li>
+                            Implementing lambda functions and CLI tools to make
+                            it easier to debug and test those functions
+                        </li>
+                        <li>Helping maintain SQL and NoSQL mix of databases</li>
+                    </ul>
+                    <div class="keywords">AWS • DynamoDB • Lambda • SES</div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Education</h2>
+                <div class="education-item">
+                    <div class="degree">
+                        B.A International Business Administration (Marketing)
+                    </div>
+                    <div class="institution">
+                        United States International University - Africa
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Certificates</h2>
+                <div class="cert-item">
+                    AWS Solutions Architect (Associate) - 2025
+                </div>
+                <div class="cert-item">
+                    AWS Solutions Architect (Professional) - 2025
+                </div>
+                <div class="cert-item">
+                    Mathematics for Machine Learning - 2025
+                </div>
+            </section>
+
+            <section>
+                <h2>Language Skills</h2>
+                <div class="languages">
+                    <div class="language">
+                        <div class="language-name">English</div>
+                        <div class="language-level">Native</div>
+                    </div>
+                    <div class="language">
+                        <div class="language-name">Dutch</div>
+                        <div class="language-level">Basics</div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Essential Skills</h2>
+                <div class="essential-skills">
+                    <div class="essential-skill">Shape Up</div>
+                    <div class="essential-skill">Full Stack Development</div>
+                    <div class="essential-skill">Project Leading</div>
+                    <div class="essential-skill">Deployments & Migrations</div>
+                    <div class="essential-skill">Cloud Native Development</div>
+                    <div class="essential-skill">Stakeholder Management</div>
+                    <div class="essential-skill">Agile</div>
+                    <div class="essential-skill">Cloud Architecture</div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Other Activities</h2>
+                <div class="activities">
+                    I spend my time experimenting with Agentic LLMs and
+                    Generative AI. I use and have contributed to the Langroid
+                    project.
+                </div>
+            </section>
+        </div>
+    </body>
+</html>
